@@ -1,8 +1,43 @@
-<p>Are you sure you want to delete "{{item}}"?</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<a href="{% url 'list' %}" >Cancel</a>
+<style>
 
-<form method="POST" action="">
-	{% csrf_token %}
-	<input type="submit" name="Confirm">
-</form>
+	body{
+		background-color: #638CB8;
+	}
+
+	input{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+
+	.submit{
+		background-color: #6BA3E8;
+	}
+
+	.center-column{
+		width:400px;
+		margin: 20px auto;
+		padding:20px;
+		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+	}
+
+</style>
+
+<div class="center-column">
+    <h3>are you sure want to delete: "<span style="color: rgb(51, 81, 146);">{{item}}</span>" </h3>
+
+    {% comment %} we can also write <a href="{% url 'list' %}"> cancel </a> {% endcomment %}
+    
+    <a class="btn btn-info"style="width: 100%;" href=" /"> Cancel </a>
+    
+    <form method="POST"action=''>
+        {% csrf_token %}
+        <input class="btn btn-info" type="submit"value="Confirm">
+    </form>
+    
+</div>
